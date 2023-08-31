@@ -1,83 +1,34 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<title></title>
-</head>
-<body>
-<p><font style="font-size:12.0pt;font-family:Times New Roman;background-color:#FFFFFF;font-weight:normal;font-style:normal;color:#000000;">// Assignment Code<br/>
-var generateBtn = document. querySelector(&quot;#generate&quot;);<br/>
- <br/>
-function generatePassword() {<br/>
-    // ask the user if how many characters they want to use<br/>
-    var chars = window. prompt(<br/>
-        &quot;how many characters do you want your password to be?&quot;<br/>
-    );<br/>
- <br/>
-    // ask user if they want to use numbers<br/>
-    var nums = window. confirm(&quot;do you want to use numbers?&quot;);<br/>
- <br/>
-    // ask user if they want to use upper case characters<br/>
-    var upper = window. confirm(&quot;do you want to use upperCase characters?&quot;);<br/>
- <br/>
-    // ask user if they want to use upper case characters<br/>
-    var lower = window. confirm(&quot;do you want to use lowerCase characters?&quot;);<br/>
- <br/>
-    // ask user if they want to use symbols<br/>
-    var symbol = window. confirm(&quot;do you want to use symbols?&quot;);<br/>
- <br/>
-    // print user input to see what they entered<br/>
- console. log(chars);<br/>
- console. log(nums);<br/>
- console. log(upper);<br/>
- console. log(lower);<br/>
- console. log(symbol);<br/>
- <br/>
-    number_string = &quot;1234567890&quot;;<br/>
-    lower_string = &quot;abcdefghijklmnopqrstuvqxyz&quot;;<br/>
-    upper_string = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;<br/>
-    symbols_string = &#39;!@#$%^&amp;*()_+&ndash;=;:&quot;[{]}&#39;;<br/>
- <br/>
-    // temporary string to hold password options<br/>
-    password_string = &quot;&quot;;<br/>
- <br/>
-    // generate the password options string<br/>
-    if (nums) {<br/>
-        password_string += number_string;<br/>
-    }<br/>
- <br/>
-    if (upper) {<br/>
-        password_string += upper_string;<br/>
-    }<br/>
- <br/>
-    if (lower) {<br/>
-        password_string += lower_string;<br/>
-    }<br/>
- <br/>
-    if (symbol) {<br/>
-        password_string += symbols_string;<br/>
-    }<br/>
- <br/>
- console. log(&quot;password generation string: &quot;  + password_string);<br/>
- <br/>
-    // converts user input from a string to an integer<br/>
-    length = parseInt(chars);<br/>
-    Where my_password = &quot;&quot;;<br/>
-    // generates custom generated password based on the password options string<br/>
-    for (var i = 0, n = password_string.length; i &lt; length; ++i) {<br/>
- my_password += password_string. charAt(Math.floor(Math.random()  * n));<br/>
-    }<br/>
- console. log(&quot;your password password: &quot;  +  &quot; &quot;  + my_password);<br/>
- <br/>
-  return my_password<br/>
-}<br/>
- <br/>
-// Write password to the #password input<br/>
-function writePassword() {<br/>
-    var password = generatePassword();<br/>
-    var passwordText = document. querySelector(&quot;#password&quot;);<br/>
- <br/>
- passwordText. value  = password;<br/>
-}<br/>
- <br/>
-// Add event listener to generate button<br/>
-generateBtn. addEventListener(&quot;click&quot;, writePassword);<div></div></font></p><p><div></div></p></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="passcode gen.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Password Generator</h1>
+      </header>
+      <div class="card">
+        <div class="card-header">
+          <h2>Generate a Password</h2>
+        </div>
+        <div class="card-body">
+          <textarea
+            readonly
+            id="password"
+            placeholder="Your Secure Password"
+            aria-label="Generated Password"
+          ></textarea>
+        </div>
+        <div class="card-footer">
+          <button id="generate" class="btn">Generate Password</button>
+        </div>
+      </div>
+    </div>
+    <script src="passcode gen.js"></script>
+  </body>
+</html>
